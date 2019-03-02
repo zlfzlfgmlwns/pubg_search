@@ -3,6 +3,15 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  callAPI = async() =>{
+    const response = await fetch('/api/playerData');
+    const body = await response.json()
+    console.log(body)
+  }
+  componentDidMount(){
+    this.callAPI()
+  
+  }
   render() {
     return (
       <div className="App">
